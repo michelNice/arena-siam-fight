@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import img from './assets/img/uii-removebg-preview.png'
+import img from './assets/img/logo.png'
+import './App.css'
 function App() {
   return (
-    <>
-      <h1>seam figth</h1>
+    <div className='navbar'>
       <img src={img} alt="" />
-    </>
+    </div>
   )
 }
 
