@@ -1,15 +1,136 @@
 @use '../styles/Colors.scss' as *;
 
-.navbar{
-    background:$color-bg;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.navbar {
+  width: 100%;
+  font-family: 'Oswald', sans-serif;
+
+  &__showcase {
+    background-color: $color-primary;
+    color: $color-text;
     width: 100%;
-}
+    padding: 6px 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 
+    p {
+      margin: 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  }
 
-.navnew{
-    background:$color-primary;
+  &__socials {
+    display: flex;
+    gap: 1.8rem;
+  }
+
+  &__social-link {
+    color: $color-text;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__main {
+    background: $color-bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 8rem; 
+    box-sizing: border-box;
+
+    .nav__logo {
+      height: 90px; 
+      width: auto;
+      object-fit: contain;
+      max-height: 90px; 
+    }
+
+    .navbar__list {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .navbar__list .navbar__item {
+      position: relative;
+
+      &.active::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $color-primary;
+      }
+    }
+
+    .navbar__list .navbar__item .navbar__link {
+      color: $color-text-muted;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transform: skewX(-15deg);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &--primary {
+      background-color: $color-primary;
+      color: $color-text;
+
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+
+    &--secondary {
+      background-color: #121212;
+      color: $color-text;
+      border: 1px solid #282828;
+
+      &:hover {
+        background-color: #1a1a1a;
+      }
+    }
+  }
 }
