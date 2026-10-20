@@ -1,11 +1,8 @@
-import { useState } from 'react'
-import img from './assets/img/logo.png'
 import './App.css'
+import Navbar from './components/Navbar'
 function App() {
   return (
-    <div className='navbar'>
-      <img src={img} alt="" />
-    </div>
+    <Navbar />
   )
 }
 
