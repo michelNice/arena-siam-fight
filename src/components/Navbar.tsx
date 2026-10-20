@@ -43,6 +43,10 @@ const Navbar = () => {
           <button className="btn btn--secondary">AULA EXPERIMENTAL</button> 
         </div>
       </div>
+
+      <div className='body'>
+
+      </div>
     </div>
   );
 };
