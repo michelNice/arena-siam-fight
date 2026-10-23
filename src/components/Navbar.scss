@@ -1,13 +1,13 @@
 @use '../styles/Colors.scss' as *;
+
 .navbar {
   width: 100%;
   font-family: 'Oswald', sans-serif;
-
   &__showcase {
     background-color: $color-primary;
     color: $color-text;
     width: 100%;
-    padding: 6px 8rem;
+    padding: 0.5rem 8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,7 @@
 
   &__socials {
     display: flex;
-    gap: 1.8rem;
+    gap: 1.5rem;
   }
 
   &__social-link {
@@ -31,12 +31,12 @@
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     transition: opacity 0.2s ease;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.75;
     }
   }
 
@@ -50,76 +50,78 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
     .nav__logo {
-      height: 90px; 
+      height:80px; 
       width: auto;
       object-fit: contain;
-      max-height: 90px; 
     }
 
     .navbar__list {
       display: flex;
       list-style: none;
-      gap: 2.5rem;
+      gap: 2rem;
       margin: 0;
       padding: 0;
       align-items: center;
-    }
 
-    .navbar__list .navbar__item {
-      position: relative;
+      .navbar__item {
+        position: relative;
 
-      &.active::after {
-        content: '';
-        position: absolute;
-        bottom: -6px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: $color-primary;
-      }
-    }
+        .navbar__link {
+          color: $color-text-muted;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.9rem;
+          letter-spacing: 1px;
+          white-space: nowrap;
+          transition: color 0.3s ease;
+          position: relative;
+          padding: 0.5rem 0;
 
-    .navbar__list .navbar__item .navbar__link {
-      color: $color-text-muted;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      white-space: nowrap;
-      transition: color 0.2s ease;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+          }
 
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -6px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: $color-primary;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-      }
+          &:hover {
+            color: $color-text;
 
-      &:hover {
-        color: $color-text;
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+          }
+        }
 
-        &::after {
-          transform: scaleX(1);
+        &.active .navbar__link {
+          color: $color-text;
+
+          &::after {
+            transform: scaleX(1);
+          }
         }
       }
     }
   }
 
+  // --- Botões de Ação ---
   &__actions {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     align-items: center;
   }
 
-  .btn {
+   .btn {
     display: inline-block;
     padding: 0.6rem 1.4rem;
     font-family: 'Oswald', sans-serif;
@@ -136,171 +138,158 @@
     &--primary {
       background-color: $color-primary;
       color: $color-text;
-
       &:hover {
         background-color: $color-primary-hover;
       }
-    }
 
+    }
     &--secondary {
       background-color: #121212;
       color: $color-text;
       border: 1px solid #282828;
-
       &:hover {
         background-color: #1a1a1a;
       }
-    }
-  }
-  
 
-  &__mobile-actions,
-  &__mobile-menu,
- &__bottom {
-    display: none;
-  }
-  
-}
-
-@media(max-width: 75rem){
-  .navbar {
-    &__main {
-      padding-inline: 3rem;
-      gap: 1.5rem;
-    }
-    &__list {
-      gap: 1.2rem;
-    }
-    &__actions {
-      gap: 0.6rem;
-    }
-    .btn {
-      padding-inline: 0.9rem;
-      font-size: 0.68rem;
-    }
-    &__showcase {
-      padding-inline: 3rem;
-    }
-  }
-}
-
-
-
-
-
-@media(max-width:50rem){
-  .navbar {
-    padding-bottom: 4.5rem;
-
-    &__list,
-    &__actions {
-      display: none;
     }
 
-    &__main {
-      position: relative;
-      min-height: 4.5rem;
-      padding: 0.4rem 1rem;
-      gap: 1rem;
-      border-bottom: 1px solid #202020;
-    }
-
-    .nav__logo {
-      height: 3.5rem;
-      max-width: 8rem;
-    }
-    &__mobile-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    &__icon-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      border: 0;
-      background: transparent;
+    &--secondary {
+      background-color: transparent;
       color: $color-text;
-      font-size: 1.25rem;
-      cursor: pointer;
-    }
+      border: 1px solid rgba(255, 255, 255, 0.2);
 
-    &__mobile-menu {
-      display: none;
-      position: fixed;
-      top: 4.5rem;
-      left: 0;
-      width: 100%;
-      background: $color-bg;
-      border-bottom: 1px solid #202020;
-      flex-direction: column;
-      padding: 1rem 0;
-      z-index: 999;
-
-      &--open {
-        display: flex;
-      }
-
-      nav {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    &__mobile-link {
-      padding: 1rem 1.5rem;
-      color: $color-text;
-      text-decoration: none;
-      font-size: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      letter-spacing: 1px;
-    }
-
-    &__bottom {
-      display: flex;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 4.5rem;
-      background: $color-bg;
-      border-top: 1px solid #202020;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    &__bottom-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: none;
-      color: $color-text-muted;
-      text-decoration: none;
-      font-size: 0.65rem;
-      gap: 4px;
-      cursor: pointer;
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 0.5px;
-
-      svg {
-        font-size: 1.2rem;
-      }
-
-      &--active,
       &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color:$color-text;
+      }
+    }
+  }
+
+
+  &__mobile-actions {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__icon-button {
+    background: transparent;
+    border: none;
+    color: $color-text;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  // --- Menu Dropdown Mobile ---
+  &__mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $color-bg;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    flex-direction: column;
+
+    &--open {
+      display: flex;
+    }
+
+    .navbar__mobile-link {
+      color: $color-text;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
         color: $color-primary;
       }
     }
   }
+
+  &__bottom {
+    display: none;
+  }
 }
+
+// --- Responsividade (Dispositivos Móveis) ---
+@media (max-width: 60rem) {
+  .navbar {
+   
+  &__showcase {
+  
+    padding: 0.5rem 0.5rem;
+
+
+    p {
+     
+      font-size: 0.5rem;
+
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+
+  }
+
+  &__social-link {
+
+    font-size: 0.5rem;
+   
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+
+
+
+   
+    
+   
+
+    &__main {
+      padding: 0.75rem 1.25rem;
+
+      .nav__logo {
+        height: 48px;
+        padding: 0;
+      }
+
+      .navbar__list,
+      .navbar__actions {
+        display: none;
+      }
+    }
+
+    &__mobile-actions {
+      display: flex;
+    }
+
+ }
+
+  }
+
 
 
 .body{
-  height: 200vh;
+  height: 100vh;
 }
-  

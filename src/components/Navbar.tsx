@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import img from '../assets/img/logo.png';
 import './Navbar.scss';
-import {FaBars,FaSearch,FaHome, FaImages,FaUser,FaTimes,FaUsers,FaEllipsisH,} from 'react-icons/fa';
+import {FaBars,FaHome, FaImages,FaUser,FaTimes,FaUsers,FaEllipsisH,} from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,17 +57,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar__mobile-actions">
-          <button
-            type="button"
-            className="navbar__icon-button"
-            aria-label="Buscar"
-            onClick={() => {
-              window.location.href = '/busca';
-            }}
-          >
-            <FaSearch />
-          </button>
-
+        
           <button
             type="button"
             className="navbar__icon-button"
