@@ -1,0 +1,489 @@
+@use '../../styles/Colors.scss' as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #0D0D0D;
+  color: $color-text;
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+  padding: 5rem 1.5rem 4rem;
+
+  /* ==========================================================================
+     BACKDROP & OVERLAYS DE IMAGEM
+     ========================================================================== */
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.68) contrast(1.2) grayscale(25%);
+    transform: scale(1.02);
+  }
+
+  /* Overlay escuro uniforme */
+  &__overlay-dark {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 13, 13, 0.65);
+  }
+
+  /* Gradiente vertical para mesclar suavemente no topo e no rodapé */
+  &__overlay-gradient {
+    position: absolute;
+    inset: 0;
+    
+  }
+
+  /* Vinheta periférica para focar o olhar no centro */
+  &__overlay-vignette {
+    position: absolute;
+    inset: 0;
+ 
+  }
+
+  /* Glows atmosféricos em Vermelho (Siam) e Azul (Tailândia) */
+  &__glow-red {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(
+      circle,
+      rgba(209, 0, 0, 0.22) 0%,
+      transparent 70%
+    );
+    filter: blur(40px);
+  }
+
+  &__glow-blue {
+    position: absolute;
+    top: 25%;
+    right: -5%;
+    width: 480px;
+    height: 480px;
+ 
+  }
+
+  /* ==========================================================================
+     CONTAINER & CONTEÚDO PRINCIPAL
+     ========================================================================== */
+  &__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Badge Superior estilizada */
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 1.2rem;
+    background: rgba(209, 0, 0, 0.12);
+    border: 1px solid rgba(209, 0, 0, 0.45);
+    border-radius: 2px;
+    margin-bottom: 1.4rem;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(209, 0, 0, 0.25);
+  }
+
+  &__badge-text {
+    font-size: clamp(0.68rem, 2vw, 0.82rem);
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+  }
+
+  /* Logo da Academia */
+  &__logo-wrap {
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    height: clamp(250px, 9vw, 115px);
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.8))
+            drop-shadow(0 0 25px rgba(209, 0, 0, 0.35));
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  /* Sub-badge / Linha de autenticidade */
+  &__sub-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.2rem;
+
+    &-line {
+      display: inline-block;
+      width: 36px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, $color-primary);
+
+      &:last-child {
+        background: linear-gradient(90deg, $color-primary, transparent);
+      }
+    }
+
+    &-label {
+      color: $color-primary;
+      font-size: clamp(0.72rem, 2vw, 0.88rem);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(209, 0, 0, 0.6);
+    }
+  }
+
+  /* ==========================================================================
+     TÍTULO PRINCIPAL (H1)
+     ========================================================================== */
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    //color: #FFFFFF;
+    max-width:100%;
+    //text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  }
+
+  &__br-desktop {
+    display: block;
+  }
+
+  /* Destaques de Cores do Título (Vermelho e Azul) */
+  &__highlight {
+    display: inline-block;
+    font-weight: 900;
+    position: relative;
+
+    &--red {
+      color: #FF2630;
+      background: linear-gradient(180deg, #FF454E 0%, #D10000 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 16px rgba(209, 0, 0, 0.55));
+    }
+
+    &--blue {
+      color: #2B8FFF;
+      background: linear-gradient(180deg, #4EA2FF 0%, #0866D9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 16px rgba(8, 102, 217, 0.55));
+    }
+  }
+
+  /* ==========================================================================
+     SUBTÍTULO / TEXTO DE APOIO
+     ========================================================================== */
+  &__description {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #D1D5DB;
+    font-size: clamp(0.92rem, 2.2vw, 1.12rem);
+    line-height: 1.6;
+    margin-top: 1.4rem;
+    margin-bottom: 2.2rem;
+    max-width: 720px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+  }
+
+  /* ==========================================================================
+     BOTÕES DE CHAMADA PARA AÇÃO (CTA)
+     ========================================================================== */
+  &__cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 680px;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0.95rem 1.8rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transform: skewX(-14deg);
+    //transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    cursor: pointer;
+    white-space: nowrap;
+    margin: 2rem 0;
+
+    &-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      transform: skewX(14deg);
+    }
+    /* Botão Primário: Gradiente Siam Fight (Vermelho + Azul Tailândia) */
+    &--primary {
+      background: $color-primary;
+      color: #FFFFFF;
+      &:hover {
+        background:$color-primary-hover;
+        box-shadow:0;
+         }
+                    
+
+      &:active {
+        transform: skewX(-14deg) translateY(0);
+      }
+    }
+
+    /* Botão Secundário: Outline translúcido refinado */
+    &--secondary {
+      background:$color-secondary;
+      color: #FFFFFF;
+  
+
+      &:hover {
+        border-color: $color-primary;
+        color: #FFFFFF;
+        background:$color-secondary-hover;
+
+        .hero__btn-icon-arrow {
+          transform: translateX(4px);
+          color: $color-primary;
+        }
+      }
+
+      &:active {
+        transform: skewX(-14deg) translateY(0);
+      }
+    }
+  }
+
+  /* ==========================================================================
+     SCROLL INDICATOR ("ROLE PARA BAIXO")
+     ========================================================================== */
+  &__scroll-indicator {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    color: #717A8A;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $color-primary;
+
+      .hero__scroll-icon {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__scroll-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__scroll-icon {
+    font-size: 0.75rem;
+    animation: heroScrollBounce 1.8s infinite ease-in-out;
+  }
+}
+
+/* ==========================================================================
+   ANIMAÇÃO DO SCROLL INDICATOR
+   ========================================================================== */
+@keyframes heroScrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE: TABLET (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 4.5rem);
+    padding: 3.5rem 1.2rem 4rem;
+
+    &__badge {
+      margin-bottom: 1rem;
+      padding: 0.3rem 0.9rem;
+    }
+
+    &__logo {
+      height: 75px;
+    }
+
+    &__title {
+      max-width: 100%;
+    }
+
+    &__br-desktop {
+      display: inline;
+    }
+
+    &__description {
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    &__cta-group {
+      gap: 0.85rem;
+    }
+
+    &__btn {
+      padding: 0.85rem 1.3rem;
+    }
+
+    &__scroll-indicator {
+      bottom: 4.8rem; /* Não colide com a navbar inferior */
+    }
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE: MOBILE (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .hero {
+    padding: 2.5rem 0.9rem 4.5rem;
+
+    &__badge {
+      padding: 0.25rem 0.65rem;
+      margin-bottom: 0.8rem;
+
+      &-text {
+        letter-spacing: 1.2px;
+      }
+    }
+
+    &__logo {
+      height: 65px;
+    }
+
+    &__sub-badge {
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+
+      &-line {
+        width: 24px;
+      }
+
+      &-label {
+        letter-spacing: 2px;
+      }
+    }
+
+    &__title {
+      font-size: clamp(1.5rem, 7.5vw, 2.1rem);
+      line-height: 1.18;
+    }
+
+    &__description {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-top: 0.85rem;
+      margin-bottom: 1.6rem;
+    }
+
+    &__cta-group {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    &__btn {
+      width: 100%;
+      padding: 0.85rem 1rem;
+
+      &-inner {
+        font-size: 0.82rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   TELAS ULTRAPROFUNDAS OU PEQUENAS (<= 340px)
+   ========================================================================== */
+@media (max-width: 340px) {
+  .hero {
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__badge-text {
+      font-size: 0.6rem;
+      letter-spacing: 0.8px;
+    }
+
+    &__btn-inner {
+      font-size: 0.74rem;
+    }
+  }
+}
+

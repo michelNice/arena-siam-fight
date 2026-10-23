@@ -1,8 +1,15 @@
-
 import { useState } from 'react';
 import img from '../../assets/img/logo.png';
 import './Navbar.scss';
-import {FaBars,FaHome, FaImages,FaUser,FaTimes,FaUsers,FaEllipsisH,} from 'react-icons/fa';
+import {
+  FaBars,
+  FaHome,
+  FaImages,
+  FaUser,
+  FaTimes,
+  FaUsers,
+  FaEllipsisH,
+} from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +25,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navbar">
+    <>
+      {/* 1. Faixa Superior (Showcase) - Rola naturalmente com a página */}
       <div className="navbar__showcase">
         <p className="navbar__phone">📞 (21) 96777-1277</p>
 
@@ -29,7 +37,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="navbar__main">
+      {/* 2. Menu Principal - Fica sticky (fixo no topo) ao atingir top: 0 */}
+      <header className="navbar__main">
         <img src={img} alt="Arena Siam Fight" className="nav__logo" />
 
         <ul className="navbar__list">
@@ -46,17 +55,15 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar__actions">
-          <button className="btn btn--primary">
+          <button className="btn btn__primary">
             ATLETA SIAM
           </button>
-
-          <button className="btn btn--secondary">
+          <button className="btn btn__secondary">
             AULA EXPERIMENTAL
           </button>
         </div>
 
         <div className="navbar__mobile-actions">
-        
           <button
             type="button"
             className="navbar__icon-button"
@@ -67,29 +74,31 @@ const Navbar = () => {
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
-      </div>
 
-      <div
-        className={`navbar__mobile-menu ${
-          menuOpen ? 'navbar__mobile-menu--open' : ''
-        }`}
-        aria-hidden={!menuOpen}
-      >
-        <nav aria-label="Navegação mobile">
-          {menuItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              className="navbar__mobile-link"
-              tabIndex={menuOpen ? 0 : -1}
-              onClick={closeMenu}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+        {/* Menu Mobile suspenso acoplado ao header */}
+        <div
+          className={`navbar__mobile-menu ${
+            menuOpen ? 'navbar__mobile-menu--open' : ''
+          }`}
+          aria-hidden={!menuOpen}
+        >
+          <nav aria-label="Navegação mobile">
+            {menuItems.map((item) => (
+              <a
+                key={item.id}
+                href={item.href}
+                className="navbar__mobile-link"
+                tabIndex={menuOpen ? 0 : -1}
+                onClick={closeMenu}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
 
+      {/* 3. Navegação Inferior Mobile */}
       <nav className="navbar__bottom" aria-label="Navegação rápida">
         <a
           href="/"
@@ -124,11 +133,10 @@ const Navbar = () => {
           <span>MAIS</span>
         </button>
       </nav>
-      <div className='body'>
-
-      </div>
-    </div>
+    </>
   );
 };
+
+//export default Navbar;
 
 export default Navbar;
