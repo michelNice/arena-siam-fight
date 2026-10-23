@@ -7,7 +7,6 @@ import { FaChevronDown } from 'react-icons/fa';
 const Hero: React.FC = () => {
   return (
     <section className="hero" id="inicio">
-      {/* Background com imagem de ação + overlays escuros com vinheta */}
       <div className="hero__backdrop">
         <img
           src={heroBg}
@@ -20,18 +19,13 @@ const Hero: React.FC = () => {
         <div className="hero__glow-red" />
         <div className="hero__glow-blue" />
       </div>
-
-      {/* Conteúdo Central */}
       <div className="hero__container">
         <div className="hero__content">
-          {/* Badge superior inspirada na referência */}
           <div className="hero__badge">
             <span className="hero__badge-text">
               FORJANDO CAMPEÕES • DISCIPLINA • TRADIÇÃO TAILANDESA
             </span>
           </div>
-
-          {/* Logo da Academia com destaque e glow */}
           <div className="hero__logo-wrap">
             <img
               src={logoImg}
@@ -40,26 +34,12 @@ const Hero: React.FC = () => {
             />
           </div>
 
-          {/* Tagline / Subtítulo Temático */}
+    
           <div className="hero__sub-badge">
             <span className="hero__sub-badge-line" />
             <span className="hero__sub-badge-label">MUAY THAI AUTÊNTICO</span>
             <span className="hero__sub-badge-line" />
           </div>
-
-          {/* Título Principal (H1) em Caixa Alta com termos-chave destacados 
-          <h1 className="hero__title">
-            O <span className="hero__highlight hero__highlight--red">TREINO FORTE</span>{' '}
-            SEMPRE VENCERÁ O{' '}
-            <span className="hero__highlight hero__highlight--blue">TALENTO</span>,{' '}
-            <br className="hero__br-desktop" />
-            ENQUANTO O{' '}
-            <span className="hero__highlight hero__highlight--blue">TALENTO</span>{' '}
-            SE RECUSAR A{' '}
-            <span className="hero__highlight hero__highlight--red">TREINAR FORTE</span>.
-          </h1>
-*/}
-          {/* Subtítulo / Texto de Apoio convidativo  */}
           <p className="hero__description">
             Supere seus limites físicos e mentais no maior centro de treinamento
             de Muay Thai da região. Metodologia autêntica, professores renomados.

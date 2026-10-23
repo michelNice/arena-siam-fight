@@ -16,9 +16,7 @@
   box-sizing: border-box;
   padding: 5rem 1.5rem 4rem;
 
-  /* ==========================================================================
-     BACKDROP & OVERLAYS DE IMAGEM
-     ========================================================================== */
+ 
   &__backdrop {
     position: absolute;
     inset: 0;
@@ -34,18 +32,18 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.68) contrast(1.2) grayscale(25%);
+    //filter: brightness(0.68) contrast(1.2) grayscale(25%);
     transform: scale(1.02);
   }
 
-  /* Overlay escuro uniforme */
+
   &__overlay-dark {
     position: absolute;
     inset: 0;
-    background: rgba(13, 13, 13, 0.65);
+    background: rgba(13, 13, 13, 0.415);
   }
 
-  /* Gradiente vertical para mesclar suavemente no topo e no rodapé */
+  
   &__overlay-gradient {
     position: absolute;
     inset: 0;
@@ -105,7 +103,7 @@
     width: 100%;
   }
 
-  /* Badge Superior estilizada */
+
   &__badge {
     display: inline-flex;
     align-items: center;
@@ -174,9 +172,7 @@
     }
   }
 
-  /* ==========================================================================
-     TÍTULO PRINCIPAL (H1)
-     ========================================================================== */
+
   &__title {
     margin: 0;
     padding: 0;
@@ -185,9 +181,7 @@
     line-height: 1.15;
     letter-spacing: 1px;
     text-transform: uppercase;
-    //color: #FFFFFF;
     max-width:100%;
-    //text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
   }
 
   &__br-desktop {
@@ -256,7 +250,6 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     transform: skewX(-14deg);
-    //transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-sizing: border-box;
     cursor: pointer;
     white-space: nowrap;
@@ -283,7 +276,7 @@
       }
     }
 
-    /* Botão Secundário: Outline translúcido refinado */
+   
     &--secondary {
       background:$color-secondary;
       color: #FFFFFF;
@@ -345,9 +338,7 @@
   }
 }
 
-/* ==========================================================================
-   ANIMAÇÃO DO SCROLL INDICATOR
-   ========================================================================== */
+
 @keyframes heroScrollBounce {
   0%, 100% {
     transform: translateY(0);
@@ -399,14 +390,12 @@
     }
 
     &__scroll-indicator {
-      bottom: 4.8rem; /* Não colide com a navbar inferior */
+      bottom: 4.8rem;
     }
   }
 }
 
-/* ==========================================================================
-   RESPONSIVIDADE: MOBILE (<= 480px)
-   ========================================================================== */
+
 @media (max-width: 480px) {
   .hero {
     padding: 2.5rem 0.9rem 4.5rem;
@@ -467,9 +456,7 @@
   }
 }
 
-/* ==========================================================================
-   TELAS ULTRAPROFUNDAS OU PEQUENAS (<= 340px)
-   ========================================================================== */
+
 @media (max-width: 340px) {
   .hero {
     &__title {
