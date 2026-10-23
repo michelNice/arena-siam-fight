@@ -1,8 +1,8 @@
-@use '../styles/Colors.scss' as *;
-
+@use '../../styles/Colors.scss' as *;
 .navbar {
   width: 100%;
   font-family: 'Oswald', sans-serif;
+
   &__showcase {
     background-color: $color-primary;
     color: $color-text;
@@ -12,10 +12,10 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-
+    
     p {
       margin: 0;
-      font-size: 0.85rem;
+      font-size: 0.85rem; 
       font-weight: 500;
       letter-spacing: 0.5px;
     }
@@ -29,15 +29,13 @@
   &__social-link {
     color: $color-text;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.8rem; 
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: opacity 0.2s ease;
 
-    &:hover {
-      opacity: 0.75;
-    }
+    &:hover {opacity: 0.75;}
   }
 
   &__main {
@@ -45,7 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0rem 8rem; 
+    padding: 0rem 8rem;
     box-sizing: border-box;
     position: sticky;
     top: 0;
@@ -53,7 +51,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
     .nav__logo {
-      height:80px; 
+      height: 80px; 
       width: auto;
       object-fit: contain;
     }
@@ -68,12 +66,11 @@
 
       .navbar__item {
         position: relative;
-
         .navbar__link {
           color: $color-text-muted;
           text-decoration: none;
           font-weight: 500;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           letter-spacing: 1px;
           white-space: nowrap;
           transition: color 0.3s ease;
@@ -95,7 +92,6 @@
 
           &:hover {
             color: $color-text;
-
             &::after {
               transform: scaleX(1);
               transform-origin: left;
@@ -105,7 +101,6 @@
 
         &.active .navbar__link {
           color: $color-text;
-
           &::after {
             transform: scaleX(1);
           }
@@ -114,19 +109,18 @@
     }
   }
 
-  // --- Botões de Ação ---
   &__actions {
     display: flex;
     gap: 0.75rem;
     align-items: center;
   }
 
-   .btn {
+  .btn {
     display: inline-block;
     padding: 0.6rem 1.4rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     border: none;
@@ -141,30 +135,15 @@
       &:hover {
         background-color: $color-primary-hover;
       }
-
-    }
-    &--secondary {
-      background-color: #121212;
-      color: $color-text;
-      border: 1px solid #282828;
-      &:hover {
-        background-color: #1a1a1a;
-      }
-
     }
 
     &--secondary {
-      background-color: transparent;
+      background: $color-secondary;
       color: $color-text;
       border: 1px solid rgba(255, 255, 255, 0.2);
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color:$color-text;
-      }
+      &:hover {background-color:$color-secondary-hover;}
     }
   }
-
 
   &__mobile-actions {
     display: none;
@@ -184,12 +163,9 @@
     padding: 0.4rem;
     transition: color 0.2s ease;
 
-    &:hover {
-      color: $color-primary;
-    }
+    &:hover {color: $color-primary;}
   }
 
-  // --- Menu Dropdown Mobile ---
   &__mobile-menu {
     display: none;
     position: absolute;
@@ -202,9 +178,7 @@
     padding: 1rem 0;
     flex-direction: column;
 
-    &--open {
-      display: flex;
-    }
+    &--open {display: flex;}
 
     .navbar__mobile-link {
       color: $color-text;
@@ -214,7 +188,6 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       transition: background 0.2s ease;
-
       &:hover {
         background: rgba(255, 255, 255, 0.05);
         color: $color-primary;
@@ -227,69 +200,29 @@
   }
 }
 
-// --- Responsividade (Dispositivos Móveis) ---
-@media (max-width: 60rem) {
+// Mude de 60rem para 64rem (1024px) ou 75rem (1200px) 
+@media (max-width: 64rem) { 
   .navbar {
-   
-  &__showcase {
-  
-    padding: 0.5rem 0.5rem;
+    &__showcase {
+      padding: 0.5rem 1.5rem;
 
-
-    p {
-     
-      font-size: 0.5rem;
-
-      letter-spacing: 0.5px;
+      p {font-size: 0.7rem;}
     }
-  }
 
-  &__socials {
-    display: flex;
-
-  }
-
-  &__social-link {
-
-    font-size: 0.5rem;
-   
-
-    &:hover {
-      opacity: 0.75;
-    }
-  }
-
-
-
-
-   
-    
-   
+    &__social-link {font-size: 0.7rem;}
 
     &__main {
-      padding: 0.75rem 1.25rem;
+      padding: 0.75rem 1.5rem; 
 
       .nav__logo {
-        height: 48px;
+        height: 50px;
         padding: 0;
       }
-
       .navbar__list,
-      .navbar__actions {
-        display: none;
-      }
+      .navbar__actions {display: none; }
     }
 
-    &__mobile-actions {
-      display: flex;
-    }
-
- }
-
+    &__mobile-actions {display: flex; }
   }
-
-
-
-.body{
-  height: 100vh;
 }
+

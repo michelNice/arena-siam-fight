@@ -1,12 +1,11 @@
 
 import { useState } from 'react';
-import img from '../assets/img/logo.png';
+import img from '../../assets/img/logo.png';
 import './Navbar.scss';
 import {FaBars,FaHome, FaImages,FaUser,FaTimes,FaUsers,FaEllipsisH,} from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   const menuItems = [
@@ -48,7 +47,7 @@ const Navbar = () => {
 
         <div className="navbar__actions">
           <button className="btn btn--primary">
-            SEJA FRANQUEADO
+            ATLETA SIAM
           </button>
 
           <button className="btn btn--secondary">
