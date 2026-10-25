@@ -249,19 +249,14 @@
         background:$color-primary-hover;
         box-shadow:0;
          }
-                    
-
       &:active {
         transform: skewX(-14deg) translateY(0);
       }
     }
 
-   
     &--secondary {
       background:$color-secondary;
       color:$color-text;
-  
-
       &:hover {
         border-color: $color-primary;
         color:$color-text;
@@ -335,7 +330,6 @@
   .hero {
     min-height: calc(100vh - 4.5rem);
     padding: 3.5rem 1.2rem 4rem;
-
     &__badge {
       margin-bottom: 1rem;
       padding: 0.3rem 0.9rem;
@@ -355,7 +349,7 @@
 
     &__cta-group {gap: 0.85rem;}
 
-    &__btn {padding: 0.85rem 1.3rem;}
+    &__btn {padding: 0.5rem 1rem;}
 
     &__scroll-indicator {bottom: 4.8rem;}
   }
@@ -375,7 +369,7 @@
       }
     }
 
-    &__logo {height: 65px;}
+    &__logo {height: 150px;}
 
     &__sub-badge {
       gap: 0.5rem;
@@ -399,17 +393,17 @@
     }
 
     &__cta-group {
-      flex-direction: column;
+
       width: 100%;
       gap: 0.75rem;
     }
 
     &__btn {
       width: 100%;
-      padding: 0.85rem 1rem;
+      padding: 0.65rem 0.4rem;
 
       &-inner {
-        font-size: 0.82rem;
+        font-size: 0.72rem;
         letter-spacing: 1px;
       }
     }

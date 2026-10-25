@@ -28,7 +28,7 @@ const Navbar = () => {
     <>
       {/* 1. Faixa Superior (Showcase) - Rola naturalmente com a página */}
       <div className="navbar__showcase">
-        <p className="navbar__phone">📞 (21) 96777-1277</p>
+        <p className="navbar__phone">📞 (81) 9987-7927</p>
 
         <div className="navbar__socials">
           <a href="#" className="navbar__social-link">INSTAGRAM</a>
