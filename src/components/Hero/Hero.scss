@@ -32,7 +32,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    //filter: brightness(0.68) contrast(1.2) grayscale(25%);
     transform: scale(1.02);
   }
 
@@ -138,7 +137,6 @@
     filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.8))
             drop-shadow(0 0 25px rgba(209, 0, 0, 0.35));
     transition: transform 0.3s ease;
-
     &:hover {
       transform: scale(1.04);
     }
@@ -171,8 +169,6 @@
       text-shadow: 0 0 12px rgba(209, 0, 0, 0.6);
     }
   }
-
-
   &__title {
     margin: 0;
     padding: 0;
@@ -184,9 +180,7 @@
     max-width:100%;
   }
 
-  &__br-desktop {
-    display: block;
-  }
+  &__br-desktop {display: block;}
 
   /* Destaques de Cores do Título (Vermelho e Azul) */
   &__highlight {
@@ -194,22 +188,8 @@
     font-weight: 900;
     position: relative;
 
-    &--red {
-      color: #FF2630;
-      background: linear-gradient(180deg, #FF454E 0%, #D10000 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 16px rgba(209, 0, 0, 0.55));
-    }
-
-    &--blue {
-      color: #2B8FFF;
-      background: linear-gradient(180deg, #4EA2FF 0%, #0866D9 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 16px rgba(8, 102, 217, 0.55));
-    }
   }
+  
 
   /* ==========================================================================
      SUBTÍTULO / TEXTO DE APOIO
@@ -264,7 +244,7 @@
     /* Botão Primário: Gradiente Siam Fight (Vermelho + Azul Tailândia) */
     &--primary {
       background: $color-primary;
-      color: #FFFFFF;
+      color:$color-text;
       &:hover {
         background:$color-primary-hover;
         box-shadow:0;
@@ -279,12 +259,12 @@
    
     &--secondary {
       background:$color-secondary;
-      color: #FFFFFF;
+      color:$color-text;
   
 
       &:hover {
         border-color: $color-primary;
-        color: #FFFFFF;
+        color:$color-text;
         background:$color-secondary-hover;
 
         .hero__btn-icon-arrow {
@@ -319,9 +299,7 @@
     &:hover {
       color: $color-primary;
 
-      .hero__scroll-icon {
-        color: $color-primary;
-      }
+      .hero__scroll-icon {color: $color-primary;}
     }
   }
 
@@ -353,7 +331,7 @@
 /* ==========================================================================
    RESPONSIVIDADE: TABLET (<= 768px)
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width:48rem) {
   .hero {
     min-height: calc(100vh - 4.5rem);
     padding: 3.5rem 1.2rem 4rem;
@@ -363,17 +341,11 @@
       padding: 0.3rem 0.9rem;
     }
 
-    &__logo {
-      height: 75px;
-    }
+    &__logo {height: 75px;}
 
-    &__title {
-      max-width: 100%;
-    }
+    &__title {max-width: 100%;}
 
-    &__br-desktop {
-      display: inline;
-    }
+    &__br-desktop {display: inline;}
 
     &__description {
       font-size: 0.95rem;
@@ -381,22 +353,16 @@
       margin-bottom: 1.8rem;
     }
 
-    &__cta-group {
-      gap: 0.85rem;
-    }
+    &__cta-group {gap: 0.85rem;}
 
-    &__btn {
-      padding: 0.85rem 1.3rem;
-    }
+    &__btn {padding: 0.85rem 1.3rem;}
 
-    &__scroll-indicator {
-      bottom: 4.8rem;
-    }
+    &__scroll-indicator {bottom: 4.8rem;}
   }
 }
 
 
-@media (max-width: 480px) {
+@media (max-width:30rem) {
   .hero {
     padding: 2.5rem 0.9rem 4.5rem;
 
@@ -409,21 +375,15 @@
       }
     }
 
-    &__logo {
-      height: 65px;
-    }
+    &__logo {height: 65px;}
 
     &__sub-badge {
       gap: 0.5rem;
       margin-bottom: 0.9rem;
 
-      &-line {
-        width: 24px;
-      }
+      &-line {width: 24px;}
 
-      &-label {
-        letter-spacing: 2px;
-      }
+      &-label {letter-spacing: 2px;}
     }
 
     &__title {
@@ -457,20 +417,16 @@
 }
 
 
-@media (max-width: 340px) {
+@media (max-width:21rem) {
   .hero {
-    &__title {
-      font-size: 1.4rem;
-    }
+    &__title {font-size: 1.4rem;}
 
     &__badge-text {
       font-size: 0.6rem;
       letter-spacing: 0.8px;
     }
 
-    &__btn-inner {
-      font-size: 0.74rem;
-    }
+    &__btn-inner {font-size: 0.74rem;}
   }
 }
 
