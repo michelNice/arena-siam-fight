@@ -1,5 +1,359 @@
+/*@use '../../styles/Colors.scss' as *;
+
+.navbar {
+  font-family: 'Oswald', sans-serif;
+
+  &__showcase {
+    position: relative;
+    width: 100%;
+    background-color: $color-primary;
+    color: $color-text;
+    padding: 0.5rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    z-index: 990;
+    
+    p {
+      margin: 0;
+      font-size: 0.85rem; 
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__mobile-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $color-bg;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 2px solid $color-primary;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    padding: 1.5rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    pointer-events: none;
+    &--open{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    nav{
+      display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 0;
+    }
+     .navbar__mobile-link{
+      width: 100%;
+      box-sizing: border-box;
+      color: $color-text-muted;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+     }
+     &:hover{color: $color-primary;}
+  }
+
+  &__social-link {
+    color: $color-text;
+    text-decoration: none;
+    font-size: 0.8rem; 
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+
+    &:hover { opacity: 0.75; }
+  }
+
+
+
+  /* 2. MENU PRINCIPAL: Fica sticky em top: 0 e se mantém fixo 
+  &__main {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: $color-bg;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 8rem;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+
+    .nav__logo {
+      height: 80px; 
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .navbar__list {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+
+      .navbar__item {
+        position: relative;
+        .navbar__link {
+          color: $color-text-muted;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.8rem;
+          letter-spacing: 1px;
+          white-space: nowrap;
+          transition: color 0.3s ease;
+          position: relative;
+          padding: 0.5rem 0;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover {
+            color: $color-text;
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+          }
+        }
+
+        &.active .navbar__link {
+          color: $color-text;
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+
+    .btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transform: skewX(-15deg);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &__primary {
+      background-color: $color-primary;
+      color: $color-text;
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+    &__secondary {
+      background: $color-secondary;
+      color: $color-text;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      &:hover { background-color: $color-secondary-hover; }
+    }
+  }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &__mobile-actions {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__icon-button {
+    background: transparent;
+    border: none;
+    color: $color-text;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    transition: color 0.2s ease;
+
+    &:hover { color: $color-primary; }
+  }
+
+  &__mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $color-bg;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    flex-direction: column;
+
+    &--open { display: flex; }
+
+    .navbar__mobile-link {
+      color: $color-text;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__bottom {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE: TABLET & MOBILE (<= 64rem / 1024px)
+   ========================================================================== 
+@media (max-width: 64rem) { 
+  .navbar {
+    &__showcase {
+      padding: 0.5rem 1.5rem;
+
+      p { font-size: 0.7rem; }
+    }
+
+    &__main{
+      position: relative;
+      padding: 0.75rem 1.5rem;
+      z-index: 1000;
+    }
+
+    &__social-link { font-size: 0.7rem; }
+
+    &__main {
+      padding: 0.75rem 1.5rem; 
+      position:static;
+      .nav__logo {
+        height: 50px;
+        padding: 0;
+      }
+      .navbar__list,
+      .navbar__actions { display: none; }
+    }
+
+    &__mobile-actions { display: flex; }
+
+    &__bottom {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3.8rem;
+      background: $color-bg;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.65);
+
+      .navbar__bottom-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: #8E95A5;
+        text-decoration: none;
+        font-size: 0.62rem;
+        gap: 3px;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        flex: 1;
+        height: 100%;
+        position: relative;
+        transition: color 0.2s ease;
+
+        svg { font-size: 1.25rem; }
+        span { font-weight: 500; }
+
+        &--active,
+        &:hover {
+          color: $color-primary;
+
+          svg { color: $color-primary; }
+          span { color: $color-primary; font-weight: 600; }
+        }
+
+        &--active::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 20%;
+          right: 20%;
+          height: 2px;
+          background-color: $color-primary;
+          box-shadow: 0 0 8px $color-primary;
+        }
+      }
+    }
+  }
+}
+
+*/
+
+
+
+
 
 @use '../../styles/Colors.scss' as *;
+@use '../../styles/Buttons.scss' as *;
+@use '../../styles/Mixins.scss' as *;
 
 .navbar {
   font-family: 'Oswald', sans-serif;
@@ -127,39 +481,7 @@
     align-items: center;
   }
 
-  .btn {
-    display: inline-block;
-    padding: 0.6rem 1.4rem;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transform: skewX(-15deg);
-    transition: all 0.3s ease;
-    white-space: nowrap;
-
-    &__primary {
-      background-color: $color-primary;
-      color: $color-text;
-
-      &:hover {
-        background-color: $color-primary-hover;
-      }
-    }
-
-    &__secondary {
-      background: $color-secondary;
-      color: $color-text;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-
-      &:hover {
-        background-color: $color-secondary-hover;
-      }
-    }
-  }
+  
 
   &__mobile-actions {
     display: none;
@@ -277,7 +599,76 @@
   &__bottom {
     display: none;
   }
+
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transform: skewX(-15deg);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &__primary {
+      background-color: $color-primary;
+      color: $color-text;
+
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+
+    &__secondary {
+      background: $color-secondary;
+      color: $color-text;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        background-color: $color-secondary-hover;
+      }
+    }
+  }
 }
+
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transform: skewX(-15deg);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &__primary {
+      background-color: $color-primary;
+      color: $color-text;
+
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+
+    &__secondary {
+      background: $color-secondary;
+      color: $color-text;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        background-color: $color-secondary-hover;
+      }
+    }
+  }
 
 @media (max-width: 64rem) {
   .navbar {
@@ -396,3 +787,4 @@
     transition: none;
   }
 }
+ 

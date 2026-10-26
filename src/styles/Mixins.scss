@@ -1,0 +1,66 @@
+@use './Colors.scss' as *;
+
+@mixin button-base(
+  $padding: 0.6rem 1.4rem,
+  $font-size: 0.7rem,
+  $skew: -15deg
+) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $padding;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  font-size: $font-size;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transform: skewX($skew);
+  transition: all 0.3s ease;
+}
+
+@mixin button-primary {
+  background-color: $color-primary;
+  color: $color-text;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}
+
+@mixin button-secondary {
+  background-color: $color-secondary;
+  color: $color-text;
+
+  &:hover {
+    background-color: $color-secondary-hover;
+  }
+}
+
+@mixin flex-center(
+  $direction: row,
+  $gap: 0,
+  $justify: center,
+  $align: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin flex-between($gap: 0) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flex-column-center($gap: 0) {
+  @include flex-center(column, $gap, center, center);
+}
