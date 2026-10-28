@@ -1,0 +1,53 @@
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Mixins.scss' as *;
+.stats__section{
+    background:$color-stats-bg;
+    width: 100%;
+    padding: 0;
+    //display: flex;
+    //justify-content: center;
+    .stats-section__container{
+        width: 100%;
+        display:grid;
+        margin: 0 auto;
+        //grid-template-columns: repeat(6,1fr);
+        max-width: 100%;
+        grid-template-columns: 21% 14% 14% 14% 14% 21%;
+        width: 100%;
+        .stats-section__item {
+            @include flex-column-center(16px);
+            padding: 50px 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: $color-surface;
+        }
+        &:last-child {border-right: none;}
+
+        .stats-section__number {
+            font-size: clamp(4rem, 3.6vw, 3.7rem);
+            font-weight:700;
+            color: $color-primary;
+            line-height: 1.1;
+            margin-bottom: 0;
+        }
+        .stats-section__label{
+            font-size: 0.75rem;
+            font-weight: 600;
+            color:$color-text-muted;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            max-width: 150px;
+            line-height: 1.4;
+        }
+    }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .stats__section {
+        .stats-section__container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+

@@ -3,7 +3,7 @@ import './Hero.scss';
 import logoImg from '../../assets/img/logo.png';
 import heroBg from '../../assets/hero-action-bg.jpg';
 import { FaChevronDown } from 'react-icons/fa';
-
+import { ScrollIndicator } from '../ScrollIndicator/ScrollIndicator';
 const Hero: React.FC = () => {
   return (
     <section className="hero" id="inicio">
@@ -33,8 +33,6 @@ const Hero: React.FC = () => {
               className="hero__logo"
             />
           </div>
-
-    
           <div className="hero__sub-badge">
             <span className="hero__sub-badge-line" />
             <span className="hero__sub-badge-label">MUAY THAI AUTÊNTICO</span>
@@ -70,6 +68,7 @@ const Hero: React.FC = () => {
         <span className="hero__scroll-text">ROLE PARA BAIXO</span>
         <FaChevronDown className="hero__scroll-icon" />
       </a>
+      <ScrollIndicator targetId="sobre" />
     </section>
   );
 };
