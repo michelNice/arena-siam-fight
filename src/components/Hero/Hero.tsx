@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         <div className="hero__content">
           <div className="hero__badge">
             <span className="hero__badge-text">
-              FORJANDO CAMPEÕES • DISCIPLINA • TRADIÇÃO TAILANDESA
+              FAZENDO CAMPEÕES • DISCIPLINA • TRADIÇÃO TAILANDESA
             </span>
           </div>
           <div className="hero__logo-wrap">
