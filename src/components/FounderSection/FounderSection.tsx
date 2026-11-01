@@ -35,7 +35,6 @@ function FounderSection(){
                     </a>
             </div>
         </section>
-    
      );
 }
 
