@@ -1,0 +1,43 @@
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Mixins.scss' as *;
+@use '../../styles/Buttons.scss' as *;
+
+.weapons-muy {
+    padding: 5rem 1.5rem;
+    color: $color-text;
+    background-color: $color-bg; 
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        flex: 1;
+        align-items: flex-start;
+        //@include flex-column-center(30px);
+
+      
+    }
+
+    &__header {
+        align-items: flex-start;
+        //@include flex-column-center(8px);
+    }
+
+    &__subtitle {
+        color: $color-primary;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    &__title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: 1px;
+    }
+
+    &__figure img{
+        width: 500px;
+    }
+}
