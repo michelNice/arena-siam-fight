@@ -1,0 +1,127 @@
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Buttons.scss' as buttons;
+@use '../../styles/Mixins.scss' as *;
+
+.weapons-muy {
+    padding: 3rem 1.5rem;
+    color: $color-text;
+    background-color: $color-bg; 
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        @include flex-column-center(30px);
+        align-items: flex-start;
+    }
+
+    &__content {
+        width: 100%;
+        @include flex-column-center(25px);
+        align-items: flex-start;
+    }
+
+    &__article {
+        width: 100%;
+        @include flex-column-center(20px);
+        align-items: flex-start;
+    }
+
+    &__header {
+        @include flex-column-center(8px);
+        align-items: flex-start;
+    }
+
+    &__subtitle {
+        color: $color-primary;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    &__title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: 1px;
+    }
+
+    &__body {
+        width: 100%;
+        @include flex-column-center(20px);
+        align-items: flex-start;
+    }
+
+    &__text {
+        color: $color-text-muted;
+        font-size: 1.1rem;
+        line-height: 1.6;
+         font-weight:200;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 12px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    &__card {
+        background-color: $color-surface;
+        border: 1px solid $color-border;
+        padding: 15px;
+        border-radius: $radius-sm;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        @include flex-center(row, 12px, flex-start, center);
+        transition: background-color $transition-default;
+
+        &:hover {
+            background-color: $color-surface-hover;
+        }
+        span {font-size: 1.2rem;}
+    }
+
+    &__btn {
+        @include buttons.button-base($padding: 14px 28px, $font-size: 0.9rem, $skew: -15deg);
+        @include buttons.button-primary;
+    }
+
+    &__btn-inner {
+        transform: skewX(15deg);
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+
+    &__figure {
+        margin: 0;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: $radius-sm;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-left: 4px solid $color-primary;
+        }
+    }
+    @media (min-width: 992px) {
+        padding: 5rem 1.5rem;
+
+        &__container {
+            flex-direction: row; 
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        &__content {flex: 1;}
+
+        &__figure {flex: 1;}
+
+        &__grid {grid-template-columns: repeat(2, 1fr); }
+    }
+}
