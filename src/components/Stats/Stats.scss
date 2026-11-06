@@ -54,11 +54,17 @@
         .stats-section__container {
             grid-template-columns: repeat(2, 1fr);
 
-        & > *:last-child ,
         & > *:first-child {
             padding-left:0;      
             align-items:center; 
             text-align:center;
+            
+        }
+
+        & > *:last-child{
+         text-align: center;
+         padding-right: 0;
+         align-items:center;
         }
         }
     }

@@ -1,5 +1,5 @@
 import './WeaponsMuy.scss';
-import img from '../../assets/img/muy.jpg';
+import img from "../../assets/img/muy.jpg";
 function WeaponsMuy() {
     return (
         <section className="weapons-muy">
