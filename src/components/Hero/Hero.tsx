@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.scss';
 import logoImg from '../../assets/img/logo.png';
-import heroBg from '../../assets/hero-action-bg.jpg';
+import heroBg from '../../assets/img/hero1.jpg';
 import { FaChevronDown } from 'react-icons/fa';
 import { ScrollIndicator } from '../ScrollIndicator/ScrollIndicator';
 const Hero: React.FC = () => {
