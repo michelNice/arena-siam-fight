@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero';
 import Stats from './components/Stats/Stats';
 import AcademyPresentation from './components/AcademyPresentation/AcademyPresentation';
 import FounderSection from './components/FounderSection/FounderSection';
+import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider';
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Stats />
       <AcademyPresentation />
       <FounderSection />
+      <TestimonialSlider />
       <WeaponsMuy />
     </>
   )
