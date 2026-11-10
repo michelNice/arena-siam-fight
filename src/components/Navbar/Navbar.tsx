@@ -21,7 +21,6 @@ const Navbar = () => {
     { id: 3, label: 'MUAY THAI', href: '/muay-thai', active: false },
     { id: 4, label: 'GALERIA', href: '/galeria', active: false },
     { id: 5, label: 'NOTÍCIAS', href: '/noticias', active: false },
-    { id: 6, label: 'FRANQUIA', href: '/franquia', active: false },
   ];
 
   return (

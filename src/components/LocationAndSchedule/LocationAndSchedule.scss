@@ -1,0 +1,125 @@
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Buttons.scss' as *;
+
+.location-and-schedule {
+  background-color: $color-bg;
+  color: $color-text;
+  padding: 4rem 0;
+  &__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__main-subtitle {
+    color: $color-primary;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    font-weight: 700;
+    margin-top: 0.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: stretch;
+      padding:0 1rem ;
+    }
+  }
+  &__details {
+    background: $color-surface;
+    border: 1px solid rgba($color-primary, 0.4);
+    box-shadow: 0 0 15px rgba($color-primary, 0.1);
+    border-radius: $radius-md;
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include flex-center(column, 0.75rem, flex-start, flex-start);
+
+    li {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 800;
+      color: $color-text;
+      letter-spacing: 0.5px;
+      @include flex-center(row, 0.5rem, flex-start, center);
+
+      &:first-child {
+        color: $color-primary;
+        font-size: 1.3rem;
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+  &__map-block {
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: 1.5rem;
+    flex: 1;
+    @include flex-center(column, 1.5rem, center, stretch);
+    display: flex;
+  }
+
+  &__map-container {
+    width: 100%;
+    height: 200px;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    border: 1px solid $color-border;
+
+    .leaflet-container {
+      width: 100%;
+      height: 100%;
+      background-color: $color-stats-bg;
+    }
+  }
+
+  &__info {
+
+    @media (min-width: 640px) {
+      @include flex-between(1rem);
+    }
+  }
+
+  &__address {
+    color: $color-text-muted;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  &__button {
+    @include button-base(0.85rem 1.75rem, 0.9rem);
+    @include button-primary;
+    margin:0.7rem 0;
+  }
+}
+.location-card {
+  &__prefix {
+    color: $color-primary;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
