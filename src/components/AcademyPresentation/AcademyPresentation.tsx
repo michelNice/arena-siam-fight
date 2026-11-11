@@ -1,6 +1,5 @@
 import './AcademyPresentation.scss'
 import academy from '../../assets/img/Acadamy_img.png'
-
 function AcademyPresentation() {
     return (
         <section className='AcademyPresentation'>
@@ -22,14 +21,10 @@ function AcademyPresentation() {
                     <a
                         href="#sobre-nos"
                         className="hero__btn hero__btn--primary"
-                    >
-                        <span className="hero__btn-inner">
-                            CONHEÇA A ACADEMIA
-                        </span>
+                    > CONHEÇA A ACADEMIA
                     </a>
                 </footer>
             </article>
-
             <figure className='AcademyPresentation__image-wrapper'>
                 <img src={academy} alt="Fachada e estrutura interna da academia Arena Siam Fight" />
             </figure>

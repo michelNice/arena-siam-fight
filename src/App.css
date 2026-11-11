@@ -1,11 +1,17 @@
 body{
    font-family: 'Oswald', sans-serif;
+   background-color: #0b0f12;
 }
 *{
     padding: 0;
     margin: 0;
 }
+.img{width:150px;}
 
-.img{
-    width:150px;
+@media (max-width: 900px) {
+  .AcademyPresentation,
+  .founder {
+    margin-bottom: 0 !important;
+    padding-bottom: 2rem !important;
+  }
 }

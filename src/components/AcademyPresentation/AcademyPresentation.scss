@@ -1,4 +1,5 @@
 @use '../../styles/Colors.scss' as *;
+
 .AcademyPresentation {
   background: $color-bg;
   padding: 4rem 2rem;
@@ -32,7 +33,7 @@
   &__title {
     color: $color-text;
     font-size: 3.5rem;
-    font-weight:500;
+    font-weight: 500;
     line-height: 1.1;
     text-transform: uppercase;
   }
@@ -42,17 +43,20 @@
     flex-direction: column;
     gap: 1rem;
 
-   p {
-    line-height: 1.75;
-    font-weight:200;
-    color: $color-text-muted;
-    font-size: 1.1rem;
-    width:90%;
+    p {
+      line-height: 1.75;
+      font-weight: 200;
+      color: $color-text-muted;
+      font-size: 1.1rem;
+      width: 90%;
     }
   }
 
   &__footer {
     margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
   }
 
   &__image-wrapper {
@@ -66,7 +70,7 @@
       height: auto;
       object-fit: cover;
       clip-path: polygon(
-        0 0,       
+        0 0,      
         calc(100% - 20px) 0,
         100% 20px,   
         100% 100%,   
@@ -77,7 +81,7 @@
   }
 }
 
-// Responsividade para dispositivos móveis
+
 @media (max-width: 900px) {
   .AcademyPresentation {
     flex-direction: column-reverse;
@@ -90,11 +94,25 @@
 
     &__image-wrapper img {
       max-width: 100%;
-      display: none;
+   
     }
 
-     p {
-    width:100%;
+    &__body p {
+      width: 100%;
+    }
+
+    &__footer {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start; 
+    }
+
+    .hero__btn {
+      align-self: flex-start !important;
+      margin-left: 0 !important;
+      width: auto !important;
+      display: inline-flex !important;
+  
     }
   }
 }

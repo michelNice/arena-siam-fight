@@ -16,10 +16,8 @@
         flex-direction: column;
         padding: 4rem 1.5rem;
         gap: 2.5rem;
-        //text-align: center;
         text-align: left;
     }
-
     &__container{
         width: 100%;
         max-width: 500px;
@@ -30,7 +28,6 @@
             max-width: 100%;
         }
     }
-
     &__image-wrapper{
         position: relative;
         display: flex;
@@ -115,9 +112,7 @@
         gap: 1.5rem;
         flex: 1;
         max-width: 650px;
-
         @media (max-width: 968px) {
-            //align-items:;
             max-width: 100%;
         }
     }
@@ -145,7 +140,6 @@
         gap: 1rem;
         
         p{
-        
             line-height: 1.6;
             text-align: left;
              font-weight:200;
@@ -176,7 +170,6 @@
 
         }
     }
-
     &__btn {
         align-self: flex-start;
         margin-top: 0.5rem;
