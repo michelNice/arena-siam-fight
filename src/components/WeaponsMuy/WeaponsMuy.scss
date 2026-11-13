@@ -85,7 +85,7 @@
     }
 
     &__btn {
-        @include buttons.button-base($padding: 14px 28px, $font-size: 0.9rem, $skew: -15deg);
+        @include buttons.button-base($font-size: 0.9rem, $skew: -15deg);
         @include buttons.button-primary;
     }
 
