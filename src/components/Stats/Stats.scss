@@ -60,6 +60,9 @@
             align-items:center; 
             text-align:center;
         }
+        & > *:last-child{
+            padding-right:0;
+        }
         }
     }
 }
