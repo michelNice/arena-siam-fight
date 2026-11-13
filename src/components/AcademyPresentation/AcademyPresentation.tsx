@@ -20,12 +20,9 @@ function AcademyPresentation() {
                 </main>
                 <footer className='AcademyPresentation__footer'>
                     <a
-                        href="#sobre-nos"
-                        className="hero__btn hero__btn--primary"
-                    >
-                        <span className="hero__btn-inner">
-                            CONHEÇA A ACADEMIA
-                        </span>
+                    href="#sobre-nos"
+                    className="hero__btn hero__btn--primary">
+                        CONHEÇA A ACADEMIA
                     </a>
                 </footer>
             </article>
