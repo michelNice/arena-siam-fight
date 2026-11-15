@@ -6,6 +6,8 @@ import AcademyPresentation from './components/AcademyPresentation/AcademyPresent
 import FounderSection from './components/FounderSection/FounderSection';
 import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider';
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
+import Contact from './components/Contact/Contact';
+import 'aos/dist/aos.css';
 function App() {
   return (
     <>
@@ -14,10 +16,12 @@ function App() {
       <Stats />
       <AcademyPresentation />
       <FounderSection />
-      <TestimonialSlider />
       <WeaponsMuy />
+      <TestimonialSlider />
+      <Contact />
     </>
   )
 }
 
 export default App
+{/***824444444444444444444444444444444444444 */}
