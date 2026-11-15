@@ -7,6 +7,8 @@ import FounderSection from './components/FounderSection/FounderSection';
 import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider';
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
 import LocationAndSchedule from './components/LocationAndSchedule/LocationAndSchedule';
+import Contact from './components/Contact/Contact';
+import 'aos/dist/aos.css';
 
 function App() {
   return (
@@ -16,9 +18,10 @@ function App() {
       <Stats />
       <AcademyPresentation />
       <FounderSection />
-      <TestimonialSlider />
       <WeaponsMuy />
       <LocationAndSchedule />
+      <TestimonialSlider />
+      <Contact />
     </>
   )
 }

@@ -1,0 +1,165 @@
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Buttons.scss' as *;
+
+.contact {
+  background-color: $color-bg;
+  color: $color-text;
+  padding: 5rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+  }
+
+  &__content {
+    @include flex-column-center(0.5rem);
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $color-primary;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__list {
+    @include flex-center(column, 1.5rem, flex-start, stretch);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+  }
+
+  // Formulário
+  form {
+    @include flex-center(column, 1rem, flex-start, stretch);
+    background-color: $color-surface;
+    padding: 2.5rem;
+    clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
+
+    @media screen {
+        padding: 0.95rem 1.1rem;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+     textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $color-bg inset !important;
+    -webkit-text-fill-color: $color-text !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+    input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: $color-bg;
+      border: 1px solid $color-border;
+      color: $color-text;
+      padding: 0.95rem 1.1rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color $transition-default;
+
+      
+
+      &::placeholder {
+        color: $color-text-muted;
+      }
+
+      &:focus {
+        border-color:$color-secondary;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+}
+
+
+.contact-info {
+  &__item {
+    @include flex-center(row, 1.25rem, flex-start, center);
+  }
+
+  &__icon-box {
+    @include flex-center();
+    width: 48px;
+    height: 48px;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+
+    &--whatsapp { color: $color-success; }
+    &--instagram { color: #e1306c; }
+    &--location { color: $color-primary; }
+  }
+
+  &__details {
+    @include flex-center(column, 0.2rem, center, flex-start);
+  }
+
+  &__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: $color-text-muted;
+    text-transform: uppercase;
+  }
+
+  &__value {
+    font-size: 0.95rem;
+    color: $color-text;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.btn-skewed {
+  @include button-base(1rem 2rem, 1rem, -15deg);
+  @include button-secondary;
+
+  span {
+    display: inline-block;
+    transform: skewX(15deg); 
+  }
+
+  &--full {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
