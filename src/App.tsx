@@ -11,7 +11,7 @@ import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider'
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
 import LocationAndSchedule from './components/LocationAndSchedule/LocationAndSchedule';
 import Contact from './components/Contact/Contact';
-
+import 'aos/dist/aos.css';
 function App() {
   useEffect(() => {
     AOS.init({
@@ -36,3 +36,4 @@ function App() {
 }
 
 export default App;
+
