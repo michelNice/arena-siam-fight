@@ -77,24 +77,32 @@
   }
 }
 
-// Responsividade para dispositivos móveis
-@media (max-width: 900px) {
+
+@media (max-width:56.25rem) {
   .AcademyPresentation {
     flex-direction: column-reverse;
     padding: 2rem 1rem;
     gap: 2rem;
-
-    &__title {
-      font-size: 2rem;
-    }
-
+    &__title {font-size: 2rem;}
     &__image-wrapper img {
       max-width: 100%;
       display: none;
     }
+    &__body p {width: 100%;}
+    &__footer {
+      display: block;
+      width: 100%;
+      text-align: left;
 
-     p {
-    width:100%;
+      .hero__btn,
+      .hero__btn--primary {
+        display: inline-flex !important;
+        width: auto !important;
+        min-width: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        float: left;
+      }
     }
   }
 }
