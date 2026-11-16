@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState} from 'react';
 import './Contact.scss';
 import { FaWhatsapp, FaInstagram, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -17,6 +18,7 @@ const Contact: React.FC = () => {
     message: '',
   });
 
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -28,20 +30,20 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
 
-    const texto = `Olá! Sou ${formData.name} (${formData.email}).
+  const texto = `Olá! Sou ${formData.name} (${formData.email}).
 Telefone: ${formData.phone || 'Não informado'}.
 Mensagem: ${formData.message}`;
 
-    const url = `https://wa.me/5581999877927?text=${encodeURIComponent(texto)}`;
+  const url = `https://wa.me/558199877927?text=${encodeURIComponent(texto)}`;
 
-    window.open(url, '_blank');
-  };
+  window.open(url, '_blank');
+};
 
   return (
-    <section className="contact" id="contato">
+    <section className="contact">
       <div className="contact__container">
         <div className="contact__content" data-aos="fade-up">
           <span className="contact__subtitle">Contato</span>
@@ -62,9 +64,7 @@ Mensagem: ${formData.message}`;
                   </span>
 
                   <a
-                    href="https://wa.me/5581999877927"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="https://wa.me/558199877927"
                     className="contact__info-value"
                   >
                     (81) 99987-7927
