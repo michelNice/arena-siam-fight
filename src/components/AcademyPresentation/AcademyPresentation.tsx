@@ -1,5 +1,5 @@
-import './AcademyPresentation.scss'
-import academy from '../../assets/img/Acadamy_img.png'
+import './AcademyPresentation.scss';
+import academy from '../../assets/img/Acadamy_img.png';
 
 function AcademyPresentation() {
     return (
@@ -18,11 +18,14 @@ function AcademyPresentation() {
                         Nossa filosofia RUSH — baseada em Respeito, União, Superação e Honra — é o alicerce de tudo que fazemos. Não formamos apenas lutadores. Formamos pessoas melhores.
                     </p>
                 </main>
+                
                 <footer className='AcademyPresentation__footer'>
                     <a
-                    href="#sobre-nos"
-                    className="hero__btn hero__btn--primary">
-                        CONHEÇA A ACADEMIA
+                        href="#sobre-nos"
+                        className="AcademyPresentation__btn AcademyPresentation__btn--primary">
+                        <span className="AcademyPresentation__btn-inner">
+                            CONHEÇA A ACADEMIA
+                        </span>
                     </a>
                 </footer>
             </article>
