@@ -1,4 +1,6 @@
 @use '../../styles/Colors.scss' as *;
+@use '../../styles/Buttons.scss' as buttons;
+
 .AcademyPresentation {
   background: $color-bg;
   padding: 4rem 2rem;
@@ -32,7 +34,7 @@
   &__title {
     color: $color-text;
     font-size: 3.5rem;
-    font-weight:500;
+    font-weight: 500;
     line-height: 1.1;
     text-transform: uppercase;
   }
@@ -42,17 +44,30 @@
     flex-direction: column;
     gap: 1rem;
 
-   p {
-    line-height: 1.75;
-    font-weight:200;
-    color: $color-text-muted;
-    font-size: 1.1rem;
-    width:90%;
+    p {
+      line-height: 1.75;
+      font-weight: 200;
+      color: $color-text-muted;
+      font-size: 1.1rem;
+      width: 90%;
     }
   }
 
   &__footer {
     margin-top: 1rem;
+  }
+
+  &__btn {
+    @include buttons.button-base($padding: 14px 28px, $font-size: 0.9rem, $skew: -14deg);
+    @include buttons.button-primary;
+  }
+
+  &__btn-inner {
+    transform: skewX(14deg);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    letter-spacing: 1px;
   }
 
   &__image-wrapper {
@@ -66,7 +81,7 @@
       height: auto;
       object-fit: cover;
       clip-path: polygon(
-        0 0,       
+        0 0,      
         calc(100% - 20px) 0,
         100% 20px,   
         100% 100%,   
@@ -77,8 +92,7 @@
   }
 }
 
-// Responsividade para dispositivos móveis
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .AcademyPresentation {
     flex-direction: column-reverse;
     padding: 2rem 1rem;
@@ -93,8 +107,21 @@
       display: none;
     }
 
-     p {
-    width:100%;
+    &__body p {
+      width: 100%;
+    }
+
+    &__footer {
+      display: block;
+      width: 100%;
+      text-align: left;
+
+      .AcademyPresentation__btn,
+      .AcademyPresentation__btn--primary {
+        display: inline-flex;
+        width: auto;
+        margin: 0;
+      }
     }
   }
 }
