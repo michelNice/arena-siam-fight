@@ -6,6 +6,7 @@ import AcademyPresentation from './components/AcademyPresentation/AcademyPresent
 import FounderSection from './components/FounderSection/FounderSection';
 import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider';
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
       <FounderSection />
       <TestimonialSlider />
       <WeaponsMuy />
+       <Footer />
     </>
   )
 }

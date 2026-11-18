@@ -1,0 +1,197 @@
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Buttons.scss' as *;
+
+.footer {
+  position: relative;
+  background-color: $color-stats-bg;
+  color: $color-text-muted;
+  padding: 3rem 1.5rem 6.5rem; 
+
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  &__brand {
+    @include flex-center(column, 1.25rem, flex-start, flex-start);
+  }
+
+  &__logo {
+    @include flex-center(row, 0.75rem, flex-start, center);
+
+    &-img {
+      max-height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__description {
+    line-height: 1.6;
+    max-width: 100%;
+    color: $color-text-muted;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 200;
+  }
+
+  &__socials {
+    @include flex-center(row, 0.75rem, flex-start, center);
+    padding-top: 0.25rem;
+  }
+
+  &__social-icon {
+    font-size: 1.125rem;
+    color: $color-text-muted;
+    transition: color $transition-default;
+  }
+
+  &__social-btn {
+    @include flex-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: $color-surface;
+    border-radius: $radius-sm;
+    text-decoration: none;
+    transition: background-color $transition-default, transform $transition-default;
+
+    &:hover {
+      background-color: $color-surface-hover;
+      transform: translateY(-2px);
+    }
+
+    &--instagram:hover .footer__social-icon {
+      color: #e1306c;
+    }
+
+    &--youtube:hover .footer__social-icon {
+      color: #ff0000;
+    }
+
+    &--facebook:hover .footer__social-icon {
+      color: $color-secondary;
+    }
+
+    &--whatsapp:hover .footer__social-icon {
+      color: $color-success;
+    }
+  }
+
+  &__column {
+    @include flex-center(column, 1rem, flex-start, flex-start);
+
+    &-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $color-text;
+      margin: 0;
+    }
+  }
+
+  &__list {
+    @include flex-center(column, 0.75rem, flex-start, flex-start);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 1rem;
+    font-weight: 200;
+    color: $color-text-muted;
+    text-decoration: none;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__bottom {
+    @include flex-column-center(1rem);
+    border-top: 1px solid $color-border;
+    padding-top: 2rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  &__copyright {
+    color: $color-text-muted;
+    margin: 0;
+  }
+
+  &__legal {
+    @include flex-center(row, 1.5rem);
+
+    &-link {
+      color: $color-text-muted;
+      text-decoration: none;
+      transition: color $transition-default;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+
+ 
+  &__whatsapp-float {
+    @include flex-center;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: $color-success;
+    color: $color-text;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba($color-success, 0.4);
+    transition: transform $transition-default, filter $transition-default;
+    z-index: 50;
+
+    &:hover {
+      filter: brightness(0.9);
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 4rem 3rem 2rem;
+
+    &__top {
+      grid-template-columns: repeat(2, 1fr);
+      padding-bottom: 4rem;
+    }
+
+    &__bottom {
+      @include flex-between(1rem);
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .footer {
+    padding: 4rem 6rem 2rem;
+
+    &__top {
+      grid-template-columns: 2.2fr 1fr 1fr 1.2fr;
+    }
+
+    &__description {
+      max-width: 340px;
+    }
+  }
+}
