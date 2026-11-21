@@ -1,8 +1,11 @@
+
 @use '../../styles/Colors.scss' as *;
-.founder{
+@use '../../styles/Buttons.scss' as buttons;
+
+.founder {
     background: $color-stats-bg;
     color: $color-text;
-    padding: 8rem ;
+    padding: 8rem;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -16,11 +19,10 @@
         flex-direction: column;
         padding: 4rem 1.5rem;
         gap: 2.5rem;
-        //text-align: center;
         text-align: left;
     }
 
-    &__container{
+    &__container {
         width: 100%;
         max-width: 500px;
         display: flex;
@@ -31,7 +33,7 @@
         }
     }
 
-    &__image-wrapper{
+    &__image-wrapper {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -43,7 +45,7 @@
         }
     }
 
-    &__tag{
+    &__tag {
         font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -76,12 +78,12 @@
         height: auto;
         display: block;
         clip-path: polygon(
-            0 0,       
+            0 0,
             calc(100% - 20px) 0,
-            100% 20px,   
-            100% 100%,   
-            20px 100%,  
-            0 calc(100% - 20px) 
+            100% 20px,
+            100% 100%,
+            20px 100%,
+            0 calc(100% - 20px)
         );
     }
 
@@ -117,12 +119,11 @@
         max-width: 650px;
 
         @media (max-width: 968px) {
-            //align-items:;
             max-width: 100%;
         }
     }
 
-    &__title{
+    &__title {
         font-size: 2.5rem;
         font-weight: 800;
         text-transform: uppercase;
@@ -143,25 +144,25 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        
-        p{
-        
+
+        p {
             line-height: 1.6;
             text-align: left;
-             font-weight:200;
-             color: $color-text-muted;
-             font-size: 1.1rem;
+            font-weight: 200;
+            color: $color-text-muted;
+            font-size: 1.1rem;
         }
     }
+
     &__quote {
         margin: 0.5rem 0;
         padding-left: 1.2rem;
         border-left: 3px solid $color-primary;
         font-style: italic;
         text-align: left;
-        font-weight:200;
+        font-weight: 200;
+
         @media (max-width: 968px) {
-            text-align: center;
             padding-left: 0;
             border-left: none;
             border-top: 3px solid $color-primary;
@@ -173,16 +174,26 @@
             color: #e0e0e0;
             font-size: 1.2rem;
             line-height: 1.5;
-
         }
     }
 
     &__btn {
+        @include buttons.button-base(
+            $padding: 0.95rem 1.8rem,
+            $font-size: 0.9rem,
+            $skew: -15deg
+        );
+
         align-self: flex-start;
         margin-top: 0.5rem;
 
         @media (max-width: 968px) {
             width: auto;
         }
+    }
+
+    &__btn-inner {
+        display: inline-block;
+        transform: skewX(15deg);
     }
 }
