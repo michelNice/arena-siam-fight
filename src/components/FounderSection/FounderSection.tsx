@@ -31,8 +31,10 @@ function FounderSection(){
                         </p>
                  </blockquote>
                  <a href="#contato" className="hero__btn hero__btn--secondary founder__btn">
-                        Ver Trajetória Completa
-                    </a>
+                        <span className='founder__btn-inner'>
+                           Ver Trajetória Completa 
+                        </span>
+                  </a>
             </div>
         </section>
      );
