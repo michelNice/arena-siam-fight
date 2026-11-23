@@ -1,4 +1,3 @@
-
 @use '../../styles/Colors.scss' as *;
 @use '../../styles/Buttons.scss' as *;
 
@@ -72,18 +71,7 @@
     border-radius: $radius-md;
     font-size: 1.35rem;
     flex-shrink: 0;
-
-    &--whatsapp {
-      color: $color-success;
-    }
-
-    &--instagram {
-      color: #e1306c;
-    }
-
-    &--location {
-      color: $color-primary;
-    }
+    color: $color-text-muted;
   }
 
   &__info-details {
