@@ -176,20 +176,17 @@
             line-height: 1.5;
         }
     }
-
     &__btn {
         @include buttons.button-base(
-            $padding: 0.95rem 1.8rem,
             $font-size: 0.9rem,
-            $skew: -15deg
+            $skew: -15deg,
+            $padding: 0.95rem 1.8rem
         );
+
+        @include buttons.button-secondary;
 
         align-self: flex-start;
         margin-top: 0.5rem;
-
-        @media (max-width: 968px) {
-            width: auto;
-        }
     }
 
     &__btn-inner {

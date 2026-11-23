@@ -30,7 +30,7 @@ function FounderSection(){
                             "O Muay Thai não é apenas uma arte marcial. É uma filosofia de vida que transforma corpos, mentes e almas. Cada aluno que entra na nossa academia sai como uma pessoa melhor."
                         </p>
                  </blockquote>
-                 <a href="#contato" className="hero__btn hero__btn--secondary founder__btn">
+                 <a href="#contato" className="founder__btn">
                         <span className='founder__btn-inner'>
                            Ver Trajetória Completa 
                         </span>
