@@ -1,6 +1,7 @@
+
 import './Footer.scss';
 import logo from '../../assets/img/logo.png';
-import { FaInstagram, FaYoutube, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -17,12 +18,15 @@ function Footer() {
             </div>
 
             <p className="footer__description">
-              Há mais de 15 anos formando atletas e transformando vidas através do Muay Thai. Sob a liderança do Mestre Isaque Hélio, ensinamos disciplina, superação e respeito, ajudando cada aluno a alcançar seu potencial.
+              Há mais de 15 anos formando atletas e transformando vidas
+              através do Muay Thai. Sob a liderança do Mestre Isaque Hélio,
+              ensinamos disciplina, superação e respeito, ajudando cada
+              aluno a alcançar seu potencial.
             </p>
 
             <div className="footer__socials">
               <a
-                href="https://instagram.com" 
+                href="https://www.instagram.com/arenasiamfight/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -30,24 +34,7 @@ function Footer() {
               >
                 <FaInstagram className="footer__social-icon" />
               </a>
-              <a
-                href="https://youtube.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="footer__social-btn footer__social-btn--youtube"
-              >
-                <FaYoutube className="footer__social-icon" />
-              </a>
-              <a
-                href="https://facebook.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="footer__social-btn footer__social-btn--facebook"
-              >
-                <FaFacebookF className="footer__social-icon" />
-              </a>
+
               <a
                 href="https://wa.me/5581999877927"
                 target="_blank"
@@ -63,19 +50,33 @@ function Footer() {
           <div className="footer__column">
             <h3 className="footer__column-title">NAVEGAÇÃO</h3>
             <ul className="footer__list">
-              <li><a href="#inicio" className="footer__link">Home</a></li>
-              <li><a href="#sobre" className="footer__link">Sobre Nós</a></li>
-              <li><a href="#muay-thai" className="footer__link">Muay Thai</a></li>
+              <li>
+                <a href="#inicio" className="footer__link">Home</a>
+              </li>
+              <li>
+                <a href="#sobre" className="footer__link">Sobre Nós</a>
+              </li>
+              <li>
+                <a href="#muay-thai" className="footer__link">Muay Thai</a>
+              </li>
             </ul>
           </div>
 
           <div className="footer__column">
             <h3 className="footer__column-title">CONTEÚDO</h3>
             <ul className="footer__list">
-              <li><a href="#" className="footer__link">Galeria</a></li>
-              <li><a href="#" className="footer__link">Notícias</a></li>
-              <li><a href="#" className="footer__link">Franquia</a></li>
-              <li><a href="#contato" className="footer__link">Contato</a></li>
+              <li>
+                <a href="#galeria" className="footer__link">Galeria</a>
+              </li>
+              <li>
+                <a href="#noticias" className="footer__link">Notícias</a>
+              </li>
+              <li>
+                <a href="#franquia" className="footer__link">Franquia</a>
+              </li>
+              <li>
+                <a href="#contato" className="footer__link">Contato</a>
+              </li>
             </ul>
           </div>
 
@@ -88,17 +89,20 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://wa.me/5581999877927" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://wa.me/5581999877927"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="footer__link"
                 >
                   WhatsApp
                 </a>
               </li>
-              <li><a href="#contato" className="footer__link">Aula Experimental</a></li>
-              <li><a href="#contato" className="footer__link">Seja Franqueado</a></li>
+              <li>
+                <a href="#contato" className="footer__link">
+                  Aula Experimental
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -107,6 +111,7 @@ function Footer() {
           <p className="footer__copyright">
             © 2026 Arena Siam Fight. Todos os direitos reservados.
           </p>
+
           <div className="footer__legal">
             <a href="#" className="footer__legal-link">
               Política de Privacidade

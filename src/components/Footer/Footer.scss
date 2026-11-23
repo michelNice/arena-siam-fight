@@ -1,3 +1,4 @@
+
 @use '../../styles/Colors.scss' as *;
 @use '../../styles/Buttons.scss' as *;
 
@@ -5,7 +6,7 @@
   position: relative;
   background-color: $color-stats-bg;
   color: $color-text-muted;
-  padding: 3rem 1.5rem 6.5rem; 
+  padding: 3rem 1.5rem 6.5rem;
 
   &__container {
     max-width: $container-width;
@@ -71,14 +72,6 @@
       color: #e1306c;
     }
 
-    &--youtube:hover .footer__social-icon {
-      color: #ff0000;
-    }
-
-    &--facebook:hover .footer__social-icon {
-      color: $color-secondary;
-    }
-
     &--whatsapp:hover .footer__social-icon {
       color: $color-success;
     }
@@ -142,28 +135,6 @@
       }
     }
   }
-
- 
-  &__whatsapp-float {
-    @include flex-center;
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: $color-success;
-    color: $color-text;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 0 20px rgba($color-success, 0.4);
-    transition: transform $transition-default, filter $transition-default;
-    z-index: 50;
-
-    &:hover {
-      filter: brightness(0.9);
-      transform: scale(1.05);
-    }
-  }
 }
 
 @media (min-width: 768px) {
@@ -182,6 +153,7 @@
     }
   }
 }
+
 @media (min-width: 1024px) {
   .footer {
     padding: 4rem 6rem 2rem;
