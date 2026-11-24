@@ -1,4 +1,7 @@
-import './App.css'
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Stats from './components/Stats/Stats';
@@ -8,9 +11,15 @@ import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider'
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
 import LocationAndSchedule from './components/LocationAndSchedule/LocationAndSchedule';
 import Contact from './components/Contact/Contact';
-import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -23,7 +32,7 @@ function App() {
       <TestimonialSlider />
       <Contact />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
