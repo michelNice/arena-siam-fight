@@ -1,9 +1,24 @@
-
+import type { MouseEvent } from 'react';
 import './Footer.scss';
 import logo from '../../assets/img/logo.png';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function Footer() {
+  const handleSmoothScroll = (
+    e: MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      targetElement.setAttribute('tabindex', '-1');
+      targetElement.focus({ preventScroll: true });
+      window.history.pushState(null, '', `#${targetId}`);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -51,13 +66,31 @@ function Footer() {
             <h3 className="footer__column-title">NAVEGAÇÃO</h3>
             <ul className="footer__list">
               <li>
-                <a href="#inicio" className="footer__link">Home</a>
+                <a
+                  href="#inicio"
+                  onClick={(e) => handleSmoothScroll(e, 'inicio')}
+                  className="footer__link"
+                >
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#sobre" className="footer__link">Sobre Nós</a>
+                <a
+                  href="#sobre"
+                  onClick={(e) => handleSmoothScroll(e, 'sobre')}
+                  className="footer__link"
+                >
+                  Sobre Nós
+                </a>
               </li>
               <li>
-                <a href="#muay-thai" className="footer__link">Muay Thai</a>
+                <a
+                  href="#muay-thai"
+                  onClick={(e) => handleSmoothScroll(e, 'muay-thai')}
+                  className="footer__link"
+                >
+                  Muay Thai
+                </a>
               </li>
             </ul>
           </div>
@@ -66,16 +99,13 @@ function Footer() {
             <h3 className="footer__column-title">CONTEÚDO</h3>
             <ul className="footer__list">
               <li>
-                <a href="#galeria" className="footer__link">Galeria</a>
-              </li>
-              <li>
-                <a href="#noticias" className="footer__link">Notícias</a>
-              </li>
-              <li>
-                <a href="#franquia" className="footer__link">Franquia</a>
-              </li>
-              <li>
-                <a href="#contato" className="footer__link">Contato</a>
+                <a
+                  href="#contato"
+                  onClick={(e) => handleSmoothScroll(e, 'contato')}
+                  className="footer__link"
+                >
+                  Contato
+                </a>
               </li>
             </ul>
           </div>
@@ -99,7 +129,11 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#contato" className="footer__link">
+                <a
+                  href="#contato"
+                  onClick={(e) => handleSmoothScroll(e, 'contato')}
+                  className="footer__link"
+                >
                   Aula Experimental
                 </a>
               </li>
@@ -111,15 +145,6 @@ function Footer() {
           <p className="footer__copyright">
             © 2026 Arena Siam Fight. Todos os direitos reservados.
           </p>
-
-          <div className="footer__legal">
-            <a href="#" className="footer__legal-link">
-              Política de Privacidade
-            </a>
-            <a href="#" className="footer__legal-link">
-              Termos de Uso
-            </a>
-          </div>
         </div>
       </div>
     </footer>
