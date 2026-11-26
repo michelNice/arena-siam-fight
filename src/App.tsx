@@ -7,6 +7,7 @@ import FounderSection from './components/FounderSection/FounderSection';
 import TestimonialSlider from './components/TestimonialSlider/TestimonialSlider';
 import WeaponsMuy from './components/WeaponsMuy/WeaponsMuy';
 import LocationAndSchedule from './components/LocationAndSchedule/LocationAndSchedule';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <TestimonialSlider />
       <WeaponsMuy />
       <LocationAndSchedule />
+      <Footer />
     </>
   )
 }
